@@ -1,4 +1,4 @@
-const friends = [
+const friendsArray = [
   {
     name: "Ahmed",
     photo:
@@ -23,3 +23,5 @@ const friends = [
     scores: [1, 5, 2, 2, 1, 5, 4, 1, 2, 5]
   },
 ];
+
+module.exports = friendsArray;
