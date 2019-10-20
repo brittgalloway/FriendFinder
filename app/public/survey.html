@@ -18,10 +18,13 @@
   </head>
   <body>
     <div class="container">
+      <!-- form start -->
+      <form class="form-horizontal" action="/action_page" method="get" >
       <h1 class="title is-3 ">
         Survey Questions
       </h1>
       <hr />
+      <!-- INFO REQUESTED -->
       <h2 class="subtitle">
         About You
       </h2>
@@ -52,6 +55,7 @@
         </div>
       </div>
       <hr />
+      <!-- QUESTION START -->
       <h2 class="subtitle">
         Question 1
       </h2>
@@ -335,11 +339,13 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-rounded">Submit</button>
+         <button class="button is-rounded" type="submit">Submit</button>
         </div>
       </div>
+      </form>
       <hr />
-      <a href="#">API Friends List</a> | <a href="#">GitHub Repo</a>
+      <a href="/api/survey">API Friends List</a> |
+      <a href="https://github.com/brittgalloway/FriendFinder">GitHub Repo</a>
     </body>
 </div>
 </html>
