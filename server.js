@@ -10,9 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //requires server side js files
-require("./routes/apiRoutes")(app);
+require("./app/routing/apiRoutes")(app);
 //requires the js files manipulating the html files needed
-require("./routes/htmlRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 //listens for port
 app.listen(PORT, function() {
