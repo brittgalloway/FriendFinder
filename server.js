@@ -1,6 +1,7 @@
 //require express
 const express = require("express");
 //assign variable to express for ease of use
+const path = require("path");
 const app = express();
 //port assignment
 const PORT = process.env.PORT || 8080;
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 //allows express to handle json files
 app.use(express.json());
+app.use(express.static("public"));
 
 //requires server side js files
 require("./app/routing/apiRoutes")(app);
