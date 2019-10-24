@@ -1,7 +1,7 @@
 //require express
 const express = require("express");
 //assign variable to express for ease of use
-const path = require("path");
+
 const app = express();
 //port assignment
 const PORT = process.env.PORT || 8080;
