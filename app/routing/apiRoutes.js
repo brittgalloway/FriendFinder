@@ -6,5 +6,6 @@ module.exports = function(app) {
   });
   app.post("/api/survey", function(req, res) {
     friendData.push(req.body);
+    res.json(req.body);
   });
 };
