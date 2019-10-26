@@ -1,5 +1,4 @@
-const friendData = require("../data/friends.js"); //
-//console.log(friendData)
+const friendData = require("../data/friends.js");
 module.exports = function(app) {
   app.get("/api/survey", function(req, res) {
     res.json(friendData);
@@ -16,12 +15,12 @@ module.exports = function(app) {
     let difference = match.matchDifference;
     for (let friend = 0; friend < friendData.length; friend++) {
       difference = 0;
-      console.log(friend);
+
       for (let score = 0; score < friendData[friend].scores.length; score++) {
         difference += Math.abs(
           parseInt(newScore[score]) - friendData[friend].scores[score]
         );
-        console.log("difference: " + difference);
+
         if (difference <= match.matchDifference) {
           match.name = friendData[friend].name;
           match.photo = friendData[friend].photo;
@@ -29,9 +28,6 @@ module.exports = function(app) {
         }
       }
     }
-    console.log("match:" + match.name);
-    console.log("match:" + match.matchDifference);
-    console.log("difference: " + difference);
 
     friendData.push(newFriend);
     res.json(match);
