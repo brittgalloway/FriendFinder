@@ -1,11 +1,34 @@
-const friendData = require("../data/friends.js");
-const path = require("path");
+const friendData = require("../data/friends.js"); //
+//console.log(friendData)
 module.exports = function(app) {
   app.get("/api/survey", function(req, res) {
     res.json(friendData);
   });
   app.post("/api/survey", function(req, res) {
-    friendData.push(req.body);
+    const newFriend = req.body;
+    const newScore = newFriend.scores;
+    console.log(newFriend);
+    const match = {
+      name: "",
+      photo: "",
+      matchDifference: 100
+    };
+    let difference = 0;
+    for (let friend = 0; friend < friendData.length; friend++) {
+      difference = 0;
+      console.log(friendData[friend]);
+      for (let score = 0; score < friendData[friend].scores.length; score++) {
+        difference += Math.abs(
+          parseInt(newScore[score]) - friendData[friend].scores[score]
+        );
+        if (difference <= match.matchDifference) {
+          match.name = friendData[friend].name;
+          match.photo = friendData[friend].photo;
+          match.matchDifference = friendData[friend].difference;
+        }
+      }
+    }
+    friendData.push(newFriend);
     res.json(req.body);
   });
 };

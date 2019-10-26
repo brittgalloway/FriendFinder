@@ -21,7 +21,7 @@
   <body>
     <div class="container">
       <!-- form start -->
-      <!-- action="/action_page" method="post"  -->
+
       <form class="form-horizontal">
         <h1 class="title is-3 ">
           Survey Questions
@@ -348,7 +348,7 @@
       <a href="https://github.com/brittgalloway/FriendFinder">GitHub Repo</a>
     </div>
     <!-- MODAL!!! -->
-    <div class="modal">
+    <div class="modal" id="modal">
       <div class="modal-background"></div>
       <div class="modal-content">
         <div class="card">
@@ -367,7 +367,10 @@
               </div>
             </div>
 
-            <div class="content">This is your best match! .</div>
+            <div class="content">
+              <p>This is your best match!</p>
+              <p>You guys should meet!</p>
+            </div>
           </div>
         </div>
       </div>
@@ -387,7 +390,7 @@
         .val()
         .trim(),
 
-      score: [
+      scores: [
         $("input[name=q1]:checked").val(),
         $("input[name=q2]:checked").val(),
         $("input[name=q3]:checked").val(),
@@ -400,9 +403,8 @@
         $("input[name=q10]:checked").val()
       ]
     };
-    console.log(newFriend);
-    $.post("/api/survey", newFriend, function(data) {
-      console.log(data);
-    });
+    $.post("/api/survey", newFriend, function(data) {});
+
+    // $("#modal").html="<div class='modal is-active'>";
   });
 </script>
