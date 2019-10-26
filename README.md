@@ -4,9 +4,9 @@ A full-stack application that finds compatibility between users
 
 ## Technology
 
-Node.js
-Express
-Bulma UI
+Node.js<br>
+Express<br>
+Bulma UI<br>
 
 ## How it Works
 
@@ -23,5 +23,6 @@ Once you have entered all your data, a modal will pop up with a picture and the 
 ## Future Developements
 
 *Adding error handling
-*Handling unanswered questions/verify the correct type of input
-\*Letting the user know whick numbers are Strongly aggree/disagree
+<br>
+*Handling unanswered questions/verify the correct type of input <br>
+*Letting the user know whick numbers are Strongly aggree/disagree
