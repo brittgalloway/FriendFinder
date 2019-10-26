@@ -7,20 +7,21 @@ module.exports = function(app) {
   app.post("/api/survey", function(req, res) {
     const newFriend = req.body;
     const newScore = newFriend.scores;
-    console.log(newFriend);
-    const match = {
+
+    let match = {
       name: "",
       photo: "",
       matchDifference: 100
     };
-    let difference = 0;
+    let difference = match.matchDifference;
     for (let friend = 0; friend < friendData.length; friend++) {
       difference = 0;
-      console.log(friendData[friend]);
+      console.log(friend);
       for (let score = 0; score < friendData[friend].scores.length; score++) {
         difference += Math.abs(
           parseInt(newScore[score]) - friendData[friend].scores[score]
         );
+        console.log("difference: " + difference);
         if (difference <= match.matchDifference) {
           match.name = friendData[friend].name;
           match.photo = friendData[friend].photo;
@@ -28,6 +29,10 @@ module.exports = function(app) {
         }
       }
     }
+    console.log("match:" + match.name);
+    console.log("match:" + match.matchDifference);
+    console.log("difference: " + difference);
+
     friendData.push(newFriend);
     res.json(match);
   });
