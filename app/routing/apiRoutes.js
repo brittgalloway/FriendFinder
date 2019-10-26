@@ -11,7 +11,7 @@ module.exports = function(app) {
     let match = {
       name: "",
       photo: "",
-      matchDifference: 100
+      matchDifference: 1
     };
     let difference = match.matchDifference;
     for (let friend = 0; friend < friendData.length; friend++) {
