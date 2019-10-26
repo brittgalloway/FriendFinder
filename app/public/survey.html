@@ -405,6 +405,9 @@
     };
     $.post("/api/survey", newFriend, function(data) {});
 
-    // $("#modal").html="<div class='modal is-active'>";
+    $("#modal").addClass("is-active");
+    $(".modal-close").click(function() {
+      $(".modal").removeClass("is-active");
+    });
   });
 </script>
