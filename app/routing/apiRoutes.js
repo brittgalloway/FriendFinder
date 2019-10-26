@@ -29,6 +29,6 @@ module.exports = function(app) {
       }
     }
     friendData.push(newFriend);
-    res.json(req.body);
+    res.json(match);
   });
 };
