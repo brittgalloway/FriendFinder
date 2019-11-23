@@ -25,7 +25,7 @@ Once you have entered all your data, a modal will pop up with a picture and the 
 *Adding error handling
 <br>
 *Handling unanswered questions/verify the correct type of input <br>
-*Letting the user know which numbers are Strongly aggree/disagree
+*Letting the user know which numbers are Strongly agree/disagree
 
 ## Deployed Project
 https://friend-finder10-26.herokuapp.com/
